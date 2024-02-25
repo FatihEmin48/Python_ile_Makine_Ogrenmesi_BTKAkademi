@@ -1,0 +1,1 @@
+# Python_ile_Makine_Ogrenmesi_BTKAkademi
