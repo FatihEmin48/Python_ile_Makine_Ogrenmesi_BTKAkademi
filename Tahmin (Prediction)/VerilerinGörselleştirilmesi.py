@@ -54,4 +54,17 @@ lr.fit(x_train, y_train)
 tahmin = lr.predict(x_test)
 
 
+#verilerin sıralanması
+x_train = x_train.sort_index()
+y_train = y_train.sort_index()
+
+#Grafik çizdirme
+plt.plot(x_train, y_train)
+plt.plot(x_test, lr.predict(x_test))
+
+
+plt.title("Aylara Göre Satış")
+plt.xlabel("Aylar")
+plt.ylabel("Satışlar")
+
 

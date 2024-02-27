@@ -52,6 +52,3 @@ lr = LinearRegression()
 lr.fit(x_train, y_train)
 
 tahmin = lr.predict(x_test)
-
-
-
