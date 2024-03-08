@@ -97,5 +97,23 @@ X_test = sc.fit_transform(x_test)
 
 #Çoklu Değişken Linear Model Uluşturulması
 from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(x_train, y_train)
 
+y_pred = regressor.predict(x_test)
+
+boy = s2.iloc[:,3:4].values
+print(boy)
+
+sol = s2.iloc[:,:3]
+sag = s2.iloc[:,4:]
+
+veri = pd.concat([sol,sag], axis=1)
+
+x_train, x_test,y_train,y_test = train_test_split(veri,boy,test_size=0.33, random_state=0)
+
+r2 = LinearRegression()
+r2.fit(x_train, y_train)
+
+y_pred = regressor.predict(x_test)
 
