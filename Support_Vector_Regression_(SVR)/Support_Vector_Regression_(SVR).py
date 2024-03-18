@@ -51,7 +51,6 @@ plt.plot(X,lin_reg2.predict(poly_reg.fit_transform(X)), color = 'blue')
 plt.show()
 
 #tahminler
-
 print(lin_reg.predict([[11]]))
 print(lin_reg.predict([[6.6]]))
 
@@ -65,20 +64,23 @@ print(lin_reg2.predict(poly_reg.fit_transform([[11]])))
 from sklearn.preprocessing import StandardScaler
 
 sc1=StandardScaler()
-
 x_olcekli = sc1.fit_transform(X)
 
 sc2=StandardScaler()
 y_olcekli = np.ravel(sc2.fit_transform(Y.reshape(-1,1)))
 
 
+
+
+
+#Support Vector Regression - SVR
 from sklearn.svm import SVR
 
 svr_reg = SVR(kernel='rbf')
-svr_reg.fit(x_olcekli,y_olcekli)
+svr_reg.fit(x_olcekli, y_olcekli)
 
-plt.scatter(x_olcekli,y_olcekli,color='red')
-plt.plot(x_olcekli,svr_reg.predict(x_olcekli),color='blue')
+plt.scatter(x_olcekli, y_olcekli, color='red')
+plt.plot(x_olcekli, svr_reg.predict(x_olcekli), color='blue')
 
 
 print(svr_reg.predict([[11]]))
